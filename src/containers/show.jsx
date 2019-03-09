@@ -4,13 +4,17 @@ import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 
 import Sidebar from "../components/sidebar.jsx";
-import { fetchCar } from "../actions";
+import { fetchCar, deleteCar } from "../actions";
 
 class Show extends Component {
   componentWillMount() {
     if (!this.props.car) {
       this.props.fetchCar(this.props.match.params.id);
     }
+  }
+
+  handleClick = () => {
+    this.props.deleteCar(this.props.history, this.props.car);
   }
 
   render() {
@@ -26,6 +30,7 @@ class Show extends Component {
           <p>{this.props.car.owner}</p>
           <div className="plate">{this.props.car.plate}</div>
           <Link to="/" className="btn btn-primary">Back</Link>
+          <button className="btn btn-warning" onClick={this.handleClick}>Delete</button>
         </div>
       </div>
     );
@@ -33,7 +38,7 @@ class Show extends Component {
 }
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators({ fetchCar: fetchCar }, dispatch);
+  return bindActionCreators({ fetchCar: fetchCar, deleteCar: deleteCar }, dispatch);
 }
 
 function mapStateToProps(state, ownProps) {

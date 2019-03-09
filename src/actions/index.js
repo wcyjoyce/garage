@@ -34,3 +34,15 @@ export function fetchCar(id) {
     payload: promise
   };
 }
+
+export function deleteCar(history, car) {
+  const url = `${ROOT_URL}/cars/${car.id}`;
+  fetch(url, { method: "DELETE" })
+    .then(response => response.json())
+    .then(() => history.push(""));
+
+  return {
+    type: "DELETE_CAR",
+    payload: car
+  }
+}
