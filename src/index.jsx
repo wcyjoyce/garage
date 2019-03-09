@@ -7,11 +7,13 @@ import logger from "redux-logger";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { createHistory as history } from "history";
 import { reducer as formReducer } from "redux-form";
+import { AnimatedSwitch } from "react-router-transition";
 
 import "../assets/stylesheets/application.scss";
 
 import Cars from "./containers/cars.jsx";
 import New from "./containers/new.jsx";
+import Show from "./containers/show.jsx";
 
 import carsReducer from "./reducers/cars_reducer.js";
 
@@ -39,6 +41,7 @@ ReactDOM.render(
       <Switch>
         <Route path="/" exact component={Cars} />
         <Route path="/cars/new" exact component={New} />
+        <Route path="/cars/:id" component={Show} />
       </Switch>
     </Router>
   </Provider>,

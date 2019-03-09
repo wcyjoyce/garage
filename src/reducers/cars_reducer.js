@@ -3,6 +3,9 @@ const carsReducer = (state = [], action) => {
     case "FETCH_CARS": {
       return action.payload;
     }
+    case "FETCH_CAR" : {
+      return [ action.payload ];
+    }
     default:
       return state;
   }

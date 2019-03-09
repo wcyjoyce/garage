@@ -24,3 +24,13 @@ export function createCar(body, callback) {
     payload: promise
   }
 }
+
+export function fetchCar(id) {
+  const url = `${ROOT_URL}/cars/${id}`;
+  const promise = fetch(url).then(response => response.json());
+
+  return {
+    type: "FETCH_CAR",
+    payload: promise
+  };
+}
