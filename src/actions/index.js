@@ -9,3 +9,18 @@ export function fetchCars() {
     payload: promise
   }
 }
+
+export function createCar(body, callback) {
+  const url = `${ROOT_URL}/:garage/cars`;
+  const promise = fetch(url, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(body)
+  }).then(response => response.json())
+    .then(callback);
+
+  return {
+    type: "CREATE_CAR",
+    payload: promise
+  }
+}
