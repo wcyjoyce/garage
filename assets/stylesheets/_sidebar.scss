@@ -26,6 +26,12 @@
       font-family: "Helvetica", sans-serif;
       font-weight: bold;
       font-size: 12px;
+      transition: 0.3s ease;
+
+      &:hover {
+        color: black;
+        transition: 0.3s ease;
+      }
     }
 
     i {

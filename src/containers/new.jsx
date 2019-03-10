@@ -35,8 +35,8 @@ class New extends Component {
             <Field label="Model" name="model" type="text" component={this.renderField} />
             <Field label="Owner" name="owner" type="text" component={this.renderField} />
             <Field label="Plate" name="plate" type="text" component={this.renderField} />
-            <button className="btn btn-danger" type="submit">Create Car</button>
-            <Link className="btn btn-warning" to="/" >Back</Link>
+            <button className="button" type="submit">Create Car</button>
+            <Link className="button" to="/" >Back</Link>
           </form>
         </div>
       </div>
@@ -44,4 +44,4 @@ class New extends Component {
   }
 }
 
-export default reduxForm({ form: "newPostForm" })( connect(null, { createCar: createCar })(New) );
+export default reduxForm({ form: "newForm" })( connect(null, { createCar: createCar })(New) );

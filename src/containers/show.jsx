@@ -24,13 +24,17 @@ class Show extends Component {
 
     return (
       <div className="content">
-        <Sidebar key="sidebar" />
+        <Sidebar garage={this.props.garage} />
         <div className="details">
-          <h3>{this.props.car.brand} - {this.props.car.model}</h3>
-          <p>{this.props.car.owner}</p>
-          <div className="plate">{this.props.car.plate}</div>
-          <Link to="/" className="btn btn-primary">Back</Link>
-          <button className="btn btn-warning" onClick={this.handleClick}>Delete</button>
+          <h3>{this.props.car.brand}</h3>
+          <h2>{this.props.car.model}</h2>
+          <div className="secondary-details">
+            <span className="owner"><strong>Owner: </strong>{this.props.car.owner}</span>
+            <span className="break">//</span>
+            <strong>Plate: </strong><span className="tab">{this.props.car.plate}</span>
+          </div>
+          {this.props.car.owner}'s {this.props.car.brand} {this.props.car.model} is a beautiful car.
+          <div><button className="button" onClick={this.handleClick}>Delete</button></div>
         </div>
       </div>
     );

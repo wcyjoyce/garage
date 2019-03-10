@@ -1,4 +1,56 @@
-.app {
-  margin-top: 20px;
-  margin-bottom: 20px;
+@import "cars";
+@import "show";
+@import "sidebar";
+@import "form";
+
+.container {
+  font-family: "Noticia Text", serif;
+  font-size: 14px;
+  color: #294074;
+  width: 90%;
+  height: calc(100vh - 100px);
+  margin: 50px auto;
+  overflow: scroll;
+  border-radius: 7.5px;
+
+  a {
+    text-decoration: none;
+    color: #294074;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
+
+h1 {
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+
+.content {
+  display: flex;
+}
+
+.details {
+  width: 75%;
+  padding: 20px;
+}
+
+.button {
+  text-transform: uppercase;
+  border-radius: 15px;
+  border: 1px solid #294074;
+  color: #294074;
+  background: white;
+  margin-right: 10px;
+  padding: 2.5px 10px;
+  transition: 0.3s ease;
+  cursor: pointer;
+
+  &:hover {
+    border: 1px solid black;
+    color: black;
+    transition: 0.3s ease;
+  }
 }

@@ -17,17 +17,13 @@ import Show from "./containers/show.jsx";
 
 import carsReducer from "./reducers/cars_reducer.js";
 
-const identityReducer = (state = null) => state;
-
-// const garageName: prompt("What is your garage?") || `garage${Math.floor(10 + (Math.random() * 90))}`;
-const garageName = "Joyce";
 const initialState = {
-  garage: garageName,
+  garage: "Joyce",
   cars: []
 };
 
 const reducers = combineReducers({
-  garage: identityReducer,
+  garage: (state = null) => state,
   cars: carsReducer,
   form: formReducer
 })
@@ -36,7 +32,7 @@ const middlewares = applyMiddleware(reduxPromise, logger);
 
 // render an instance of the component in the DOM
 ReactDOM.render(
-  <Provider store={createStore(reducers, {}, middlewares)}>
+  <Provider store={createStore(reducers, initialState, middlewares)}>
     <Router history={history}>
       <Switch>
         <Route path="/" exact component={Cars} />

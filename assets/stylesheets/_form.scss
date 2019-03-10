@@ -1,0 +1,17 @@
+form {
+  width: 100%;
+
+  .form-group {
+    margin-bottom: 10px;
+
+    label {
+      width: 15%;
+    }
+
+    input {
+      width: 85%;
+      border-radius: 3px;
+      border: 1px solid #DEDEDE;
+    }
+  }
+}
